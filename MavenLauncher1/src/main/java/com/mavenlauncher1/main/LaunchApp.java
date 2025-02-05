@@ -55,9 +55,12 @@ If Spring creates the object of a class for us we call it as Spring Bean
 	To manage these Bean classes we have two famous IOC containers 
 		1) Bean Factory
 		2) Application Context
+	SPring Boot by default uses application context
 
 
 MAVEN vs GRADLE: We use both Maven and Gradle as build tools but Maven is only compatable with JAVA projects where as we can develop C, Groovy, GoLang etc.. projects with gradle	
+For Spring dependencies we have to search "spring context" in MVNRepository. After adding it to pom.xml we have to update the project
+When we create a Maven Project the default version is Java1.5 so we have to update the version in pom.xml file
 
  */
 
@@ -68,7 +71,7 @@ MAVEN vs GRADLE: We use both Maven and Gradle as build tools but Maven is only c
 	•		and few tags Enables Spring MVC’s annotation-based controllers, we need to add few more to configure DB or
 			enable auto configuration.
 		
-		To we want spring to create and manage bean we use following tag
+		As we want spring to create and manage bean we use following tag
 			Syntax: <bean id="referenceVariable" class="packageName.className" />
 				Default id will be class name in camel case
 		
@@ -77,7 +80,7 @@ MAVEN vs GRADLE: We use both Maven and Gradle as build tools but Maven is only c
 		We create bean for target class and that includes 
 			If it is constructor injection in target class we use constructor-arg	
 			If it is setter injection we use property tag 
-				In that we specified what object we are injecting
+				In that we specified what object we are injecting. We specified name="service" as that is the variable/ field which is passed in setter argument
 					Syntax:      <property ref="dhl" name ="service"></property>
  */
 
@@ -87,6 +90,7 @@ public class LaunchApp {
 	public static void main(String[] args) {
 		
 		// Activating spring using application context IOC interface
+		// We are creating beans of service classes using appConfig.xml file with desired id's
 		ApplicationContext container = new ClassPathXmlApplicationContext("appConfig.xml");
 		
 		Amazon amz = container.getBean(Amazon.class);

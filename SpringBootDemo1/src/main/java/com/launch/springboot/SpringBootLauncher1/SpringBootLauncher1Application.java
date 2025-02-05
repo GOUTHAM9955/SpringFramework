@@ -12,7 +12,7 @@ import org.springframework.context.ApplicationContext;
  * 
  *  Concept of scope:
  *  	When we use getBean(ClassName) multiple times, we will be refering to the same object which is called singleton scope.
- *  		By default spring boes with singleton scope
+ *  		By default spring goes with singleton scope
  *  	
  *  	If we want different object for every getBean call of that class we can define the scope with annotation
  *  		@Scope("prototype")    // Default is @Scope("singletone")
@@ -29,7 +29,7 @@ public class SpringBootLauncher1Application {
 
 	public static void main(String[] args) {
 		
-		// TO get hold of Spring COntainer
+		// To get hold of Spring Container
 		ApplicationContext context = SpringApplication.run(SpringBootLauncher1Application.class, args);
 		
 		Welcome wel = context.getBean(Welcome.class);
