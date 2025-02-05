@@ -53,9 +53,10 @@ In the above example we are not creating object in Amazon class and giving the o
 Spring Framework has IOC containers which performs dependency Injections based on configuration
 If Spring creates the object of a class for us we call it as Spring Bean
 	To manage these Bean classes we have two famous IOC containers 
-		1) Bean Factory
-		2) Application Context
-	SPring Boot by default uses application context
+		1) Bean Factory (Lazy loading- When we are using an object then only a bean will be created)
+		2) Application Context (Eager loading - All the beans will be readily available in IOC cantainer even we use or don't use it)
+	Spring Boot by default uses application context
+	
 
 
 MAVEN vs GRADLE: We use both Maven and Gradle as build tools but Maven is only compatable with JAVA projects where as we can develop C, Groovy, GoLang etc.. projects with gradle	
@@ -92,6 +93,11 @@ public class LaunchApp {
 		// Activating spring using application context IOC interface
 		// We are creating beans of service classes using appConfig.xml file with desired id's
 		ApplicationContext container = new ClassPathXmlApplicationContext("appConfig.xml");
+		
+		/* If we want to use BeanFactory
+		   DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+		   XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+		  reader.loadBeanDefinition("appConfig.xml"); */
 		
 		Amazon amz = container.getBean(Amazon.class);
 		Boolean status =amz.initiateDelivery(1002.23);
