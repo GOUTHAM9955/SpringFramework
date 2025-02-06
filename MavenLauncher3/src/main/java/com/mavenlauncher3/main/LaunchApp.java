@@ -3,7 +3,7 @@ package com.mavenlauncher3.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-// Refer MavenLauncher5 as a prerequisite
+
 /*
  * In this class we are going to use @Autowired approch for IOC containers using annotation
  * 

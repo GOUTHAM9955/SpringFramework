@@ -9,11 +9,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 /*
- * In this class we are going to discuss more on XML configuration
+ * In this class we are going to discuss more on XML configuration where we have to pass paremeters to constructor while creating a bean 
  * 
- * 1) Invoking parameterised costructor and passing values while creating bean
+ * 1) Invoking parameterised constructor and passing values while creating bean
  * 		While creating employee bean we are passing values to the parameterised constructor using 
- * 			<constructor-arg value = "1"/> tag like we used property tag for setter injection
+ * 			<constructor-arg value = "1"/> tag 
  * 
  * 2) If we want to pass values using index instead of order
  * 		We created a bean emp2 and passed values based on index and re-arraged the order in the tag
@@ -21,7 +21,10 @@ import org.springframework.core.io.Resource;
  * 
  * 3) Using name instead of index in creating beans by invoking parametarised constructors
  * 		We created a bean emp3 using names of the fields to invoke parametarised constructor
- * 			*This is not working for me*
+ * 			*This is not working for me as we have name as a parameter [name = "name" is causing conflict]*
+ * 
+ * 4) If for example there a department class and we have to pass that value to Employee class and we don't have the object yet we can do it with 
+ * 		by creating a bean of depart and passing it as reference to employee class 
  * 
  * 4) We are going to implement lazy loading using BeanFactory
  * 		1) Using DefaultListableBeanFactory we create the container of BeanFactory
