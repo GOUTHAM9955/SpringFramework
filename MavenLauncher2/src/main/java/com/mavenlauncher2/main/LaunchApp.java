@@ -13,12 +13,13 @@ import com.mavenlauncher2.config.Password;
  * 	
  * 		Stereotype annotations are annotations which we apply on a class
  * 			The base of stereotype annotation is @Component
- * 			There are annotations which are @Component having additional features
+ * 			These are annotations which are @Component + having additional features
  * 				ex: @Controller , @Repository, @RestController, @Service, @Configuration
- * 			We have other annotations such as
+ * 			
+ * 		We have other annotations such as
  * 				Ex: @Autowired for Dependency Injection
  * 					@Qualified or @Primary for resolving ambiguity
- * 					@Bean when we create an instance of class and we want spring to manage its life cycle
+ * 					@Bean is applied on methods and the objects returned by that method are automatically registered by Spring 
  * 					
  * 		If we want spring to create a Bean of a class we use @Component stereotype annotation
  * 		There are 3 layers in designing an application
