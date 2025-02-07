@@ -7,6 +7,14 @@ import org.springframework.context.ApplicationContext;
 
 /*
  * In this project we are going to get an overview of SpringBoot
+ *   As of today latest springboot version is 3 which uses spring framework version 6 that requires min of java 17 version
+ *   
+ *   If page name which we specify while creating  the spring boot application will eb considered as the base package, any package outhside that 
+ *     wont be considered
+ * 
+ * To create a spring project in community version we have to got to spring intializer(start.spring.io), add required dependency and click on generate
+ *    (Explore the explore button)
+ * 
  * 
  * 		Spring Boot tries to solve the pain point in java which is, Java is verbose
  * 
@@ -24,7 +32,8 @@ import org.springframework.context.ApplicationContext;
  * 
  */
 
-@SpringBootApplication
+// this snnotation => @ComponentScan + @EnableAutoConfiguration 
+@SpringBootApplication  
 public class SpringBootLauncher1Application {
 
 	public static void main(String[] args) {
